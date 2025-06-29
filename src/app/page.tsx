@@ -6,7 +6,7 @@ import Awards from '@/components/home/Awards';
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-main">
+    <div className="min-h-screen w-screen bg-main overflow-x-hidden overflow-y-scroll">
       <Hero />
       <Product />
       <Awards />
