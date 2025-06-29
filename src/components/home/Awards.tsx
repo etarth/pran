@@ -10,8 +10,8 @@ const Awards = () => {
       <div className="flex flex-col max-w-6xl mx-auto items-center gap-12">
         <h2 className="text-black text-md font-bold">Awards</h2>
 
-        <div className="flex gap-6">
-          <div className="flex flex-col justify-center gap-4">
+        <div className="flex gap-6 overflow-x-scroll w-full px-6 snap-x">
+          <div className="flex flex-col justify-center gap-4 snap-center">
             <div className="relative bg-gray-200 w-full h-fit rounded-lg overflow-hidden">
               <Image
                 src="/images/"
@@ -30,7 +30,7 @@ const Awards = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-4">
+          <div className="flex flex-col justify-center gap-4 snap-center">
             <div className="relative bg-gray-200 w-full h-fit rounded-lg overflow-hidden">
               <Image
                 src="/images/"
@@ -49,7 +49,7 @@ const Awards = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-4">
+          <div className="flex flex-col justify-center gap-4 snap-center">
             <div className="relative bg-gray-200 w-full h-fit rounded-lg overflow-hidden">
               <Image
                 src="/images/"
