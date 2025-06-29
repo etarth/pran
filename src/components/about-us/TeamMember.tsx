@@ -91,11 +91,106 @@ const TeamMember = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 md:py-20 bg-white min-h-screen md:min-h-0">
       <div className="flex flex-col gap-12 max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-black text-md font-bold text-center">Team Member</h2>
 
-        <div className="flex flex-col gap-12">
+        {/* Mobile Version - Carousel Layout */}
+        <div className="flex-1 w-full md:hidden flex flex-col justify-center min-h-[calc(100vh-12rem)]">
+          <div className="space-y-8">
+            {/* Scrollable Image Carousel */}
+            <div className="relative">
+              <div 
+                className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide gap-4 pb-4"
+                onScroll={(e) => {
+                  const scrollLeft = e.currentTarget.scrollLeft;
+                  const width = e.currentTarget.offsetWidth;
+                  const newIndex = Math.round(scrollLeft / (width + 16)); // 16px gap
+                  setSelectedMember(Math.max(0, Math.min(newIndex, teamMembers.length - 1)));
+                }}
+              >
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={member.id}
+                    className="flex-none w-full rounded-lg bg-gray-200 flex items-center justify-center snap-center"
+                    style={{ aspectRatio: '9/13' }}
+                  >
+                    <span className="text-gray-500">{member.nickname}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-start space-x-2 mt-4">
+                {teamMembers.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedMember(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === selectedMember ? 'bg-black' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Member Info Section - Below Picture */}
+            <div className="space-y-4">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-md font-semibold text-black">
+                  {currentMember.nickname} {currentMember.position}
+                </h3>
+                <p className="text-gray-500 text-md">{currentMember.fullName}</p>
+              </div>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {currentMember.description}
+              </p>
+
+              {/* Social Icons */}
+              <div className="flex space-x-3">
+                <button 
+                  onClick={() => handleSocialClick(currentMember.social.linkedin)}
+                  className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
+                    currentMember.social.linkedin !== "#" 
+                      ? "hover:bg-gray-600 hover:text-white cursor-pointer" 
+                      : "cursor-not-allowed opacity-50"
+                  }`}
+                  disabled={currentMember.social.linkedin === "#"}
+                >
+                  <Linkedin className="w-4 h-4" />
+                </button>
+
+                <button 
+                  onClick={() => handleSocialClick(currentMember.social.facebook)}
+                  className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
+                    currentMember.social.facebook !== "#" 
+                      ? "hover:bg-gray-600 hover:text-white cursor-pointer" 
+                      : "cursor-not-allowed opacity-50"
+                  }`}
+                  disabled={currentMember.social.facebook === "#"}
+                >
+                  <Facebook className="w-4 h-4" />
+                </button>
+
+                <button 
+                  onClick={() => handleSocialClick(currentMember.social.instagram)}
+                  className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
+                    currentMember.social.instagram !== "#" 
+                      ? "hover:bg-gray-600 hover:text-white cursor-pointer" 
+                      : "cursor-not-allowed opacity-50"
+                  }`}
+                  disabled={currentMember.social.instagram === "#"}
+                >
+                  <Instagram className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Version - Original Layout */}
+        <div className="hidden md:flex flex-col gap-12">
           {/* Top Section - Large Selected Member + 4 Other Members */}
           <div className="flex justify-between items-center">
             {/* Large Selected Member Image */}
@@ -139,7 +234,6 @@ const TeamMember = () => {
 
             {/* Social Icons */}
             <div className="flex space-x-3">
-              {/* LinkedIn */}
               <button 
                 onClick={() => handleSocialClick(currentMember.social.linkedin)}
                 className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
@@ -152,27 +246,25 @@ const TeamMember = () => {
                 <Linkedin className="w-4 h-4" />
               </button>
 
-              {/* Facebook */}
               <button 
                 onClick={() => handleSocialClick(currentMember.social.facebook)}
                 className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
                   currentMember.social.facebook !== "#" 
                     ? "hover:bg-gray-600 hover:text-white cursor-pointer" 
                     : "cursor-not-allowed opacity-50"
-                }`}
+                  }`}
                 disabled={currentMember.social.facebook === "#"}
               >
                 <Facebook className="w-4 h-4" />
               </button>
 
-              {/* Instagram */}
               <button 
                 onClick={() => handleSocialClick(currentMember.social.instagram)}
                 className={`w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center transition-colors ${
                   currentMember.social.instagram !== "#" 
                     ? "hover:bg-gray-600 hover:text-white cursor-pointer" 
                     : "cursor-not-allowed opacity-50"
-                }`}
+                  }`}
                 disabled={currentMember.social.instagram === "#"}
               >
                 <Instagram className="w-4 h-4" />

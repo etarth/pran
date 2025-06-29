@@ -6,7 +6,7 @@ import Recruit from '@/components/about-us/Rercruit'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-main">
+    <div className="min-h-screen bg-main overflow-x-hidden">
       <Hero/>
       <TeamMember/>
       <Recruit/>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { ReactNode } from "react";
 import Navigation from "@/components/Navigation";
 import ContactModal from "@/components/ContactModal";
@@ -14,11 +14,13 @@ const ClientWrapperContent: React.FC<ClientWrapperProps> = ({ children }) => {
 
   return (
     <>
-      <Navigation setContactModalOpen={setContactModalOpen} />
+      <div className="absolute top-0 w-screen">
+        <Navigation setContactModalOpen={setContactModalOpen} />
+      </div>
       <ContactModal isOpen={contactModalOpen} setIsOpen={setContactModalOpen} />
-      
+
       <main>{children}</main>
-      
+
       <Footer />
     </>
   );

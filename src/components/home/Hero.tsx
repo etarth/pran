@@ -6,7 +6,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="bg-background h-screen">
-      <div className="flex flex-col gap-12 px-6 w-full h-full text-center">
+      <div className="flex flex-col gap-12 px-6 pt-16 w-full h-full text-center">
         <div className="relative bg-gray-200 w-full h-[600px] rounded-lg overflow-hidden">
           <Image
             src="/images/hero.jpg"

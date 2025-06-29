@@ -33,7 +33,7 @@ const Navigation = ({
           >
             Pran
           </Link>
-          <div className="text-sm font-medium text-gray-500 mt-1 hidden sm:block">
+          <div className="text-sm font-medium text-gray-500 mt-1">
             ปราณโอสถละมุน
           </div>
         </div>
