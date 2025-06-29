@@ -16,9 +16,12 @@ const Hero = () => {
 
   return (
     <section className="bg-background h-screen">
-      <div className="flex flex-col justify-center gap-12 px-6 w-full h-full items-center bg-neutral-50">
+      <div className="flex flex-col justify-center gap-12 px-6 w-full h-full items-center bg-neutral-50 relative">
+        
+        {/* Content Section */}
         <div className="flex w-full justify-between max-w-6xl z-10">
-          <div className="w-96 text-start">
+          {/* Text Content */}
+          <div className="w-64 md:w-96 text-start">
             <h6 className="text-md text-black font-bold mb-6">What is Pran?</h6>
             <p className="text-gray-600">
               Pran is a gentle and natural herbal solution designed to support
@@ -27,7 +30,8 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-between py-2">
+          {/* Desktop Submenu - Hidden on mobile */}
+          <div className="hidden md:flex flex-col items-start justify-between py-2">
             <button
               onClick={() => scrollToSection('cartridge')}
               className="hover:text-black text-gray-500 text-sm transition-colors cursor-pointer text-left"
@@ -49,7 +53,8 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 bg-gray-200 w-2/5 h-4/5 rounded-lg overflow-hidden z-0">
+        {/* Responsive Image */}
+        <div className="absolute bg-gray-200 w-4/5 md:w-2/5 h-4/5 md:h-4/5 rounded-md overflow-hidden z-0">
           <Image
             src=""
             alt="Pran logo"
