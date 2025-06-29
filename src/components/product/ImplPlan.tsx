@@ -36,7 +36,7 @@ const ImplPlan = () => {
 
   return (
     <section className="py-20 bg-[#F7F7F7]">
-      <div className="flex flex-col max-w-6xl mx-auto px-4 gap-12">
+      <div className="flex flex-col max-w-6xl mx-auto px-8 gap-12">
         <h2 className="text-md font-bold text-black text-left">
           Implementation Plan
         </h2>
