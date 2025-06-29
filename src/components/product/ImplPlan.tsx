@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+import { useModal } from "@/contexts/ModalContext";
 
 const ImplPlan = () => {
+  const { setContactModalOpen } = useModal();
+  
   const milestones = [
     {
       id: 1,
@@ -67,7 +70,10 @@ const ImplPlan = () => {
 
         {/* Join Us Button */}
         <div className="flex justify-start">
-          <button className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">
+          <button 
+            onClick={() => setContactModalOpen(true)}
+            className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
+          >
             join us
           </button>
         </div>

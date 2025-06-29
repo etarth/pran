@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
+import { useModal } from "@/contexts/ModalContext";
 
 const Recruit = () => {
+  const { setContactModalOpen } = useModal();
   const [openPosition, setOpenPosition] = useState(0); // First position open by default
 
   const positions = [
@@ -75,7 +77,10 @@ const Recruit = () => {
 
         {/* Join Us Button */}
         <div className="text-center mt-12">
-          <button className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors hover:cursor-pointer">
+          <button 
+            onClick={() => setContactModalOpen(true)}
+            className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors hover:cursor-pointer"
+          >
             join us
           </button>
         </div>

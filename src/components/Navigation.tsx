@@ -29,7 +29,7 @@ const Navigation = ({
           href="/product"
           className={`hover:text-black text-sm transition-colors cursor-pointer ${
             pathname === "/product"
-              ? "text-accent font-medium"
+              ? "text-black font-medium"
               : "text-gray-500"
           }`}
         >
@@ -39,7 +39,7 @@ const Navigation = ({
           href="/about-us"
           className={`hover:text-black text-sm transition-colors cursor-pointer ${
             pathname === "/about-us"
-              ? "text-accent font-medium"
+              ? "text-black font-medium"
               : "text-gray-500"
           }`}
         >
@@ -47,7 +47,7 @@ const Navigation = ({
         </Link>
         <button
           onClick={() => setContactModalOpen(true)}
-          className="bg-accent text-white bg-black text-sm px-6 py-1.5 rounded-md hover:opacity-90"
+          className="bg-accent text-white bg-black text-sm px-6 py-1.5 rounded-md hover:opacity-90 hover:cursor-pointer"
         >
           Join Us
         </button>

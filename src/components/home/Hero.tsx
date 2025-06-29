@@ -5,7 +5,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="bg-background h-full">
+    <section className="bg-background h-screen">
       <div className="flex flex-col gap-12 px-6 w-full h-full text-center">
         <div className="relative bg-gray-200 w-full h-[600px] rounded-lg overflow-hidden">
           <Image
@@ -15,7 +15,7 @@ const Hero = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-6">
           <p className="text-gray-500 max-w-2xl mx-auto">
             <span className="font-bold text-black">Pran</span> Lorem ipsum dolor
             sit amet consectetur. Lorem tellus dui auctor pharetra aliquam
