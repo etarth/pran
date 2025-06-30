@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     <section className="bg-background h-screen">
-      <div className="flex flex-col justify-center gap-12 px-6 pt-16 w-full h-full items-center bg-neutral-50 relative">
+      <div className="flex flex-col justify-center gap-12 px-6 w-full h-full items-center bg-neutral-50 relative">
         
         {/* Content Section */}
         <div className="flex w-full justify-between max-w-6xl z-10">

@@ -6,7 +6,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="bg-background h-screen">
-      <div className="flex flex-col px-4 py-4 md:py-0 md:px-6 w-full h-full gap-24 md:gap-12 text-center justify-end items-center bg-background">
+      <div className="flex flex-col px-4 py-4 md:py-0 md:px-6 -mt-16 w-full h-full gap-24 md:gap-12 text-center justify-end items-center bg-background">
         <div className="flex flex-col gap-4 md:gap-6">
           <h2 className="text-black text-md font-bold">Team</h2>
 

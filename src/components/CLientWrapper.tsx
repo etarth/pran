@@ -14,9 +14,7 @@ const ClientWrapperContent: React.FC<ClientWrapperProps> = ({ children }) => {
 
   return (
     <>
-      <div className="absolute top-0 w-screen">
-        <Navigation setContactModalOpen={setContactModalOpen} />
-      </div>
+      <Navigation setContactModalOpen={setContactModalOpen} />
       <ContactModal isOpen={contactModalOpen} setIsOpen={setContactModalOpen} />
 
       <main>{children}</main>
