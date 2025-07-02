@@ -1,8 +1,6 @@
 // src/app/api/contact/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import * as XLSX from 'xlsx';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { createClient } from '@supabase/supabase-js';
 
 export interface ContactFormData {
   type: 'investor' | 'position';
@@ -10,8 +8,14 @@ export interface ContactFormData {
   surname: string;
   email: string;
   phone: string;
-  submittedAt: string;
+  submitted_at?: string; // Note: using snake_case for database column
 }
+
+// Initialize Supabase client
+const supabaseUrl = 'https://kbfmgbdqtyiwsrgisxdw.supabase.co';
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY!; // You'll need to add this to your .env file
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,14 +53,27 @@ export async function POST(request: NextRequest) {
       surname,
       email,
       phone,
-      submittedAt: new Date().toISOString(),
+      submitted_at: new Date().toISOString(),
     };
 
-    // Save to Excel file
-    await saveToExcel(contactData);
+    // Save to Supabase
+    const { data, error } = await supabase
+      .from('contact_submissions')
+      .insert([contactData])
+      .select();
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json(
+        { error: 'Failed to save contact form data' },
+        { status: 500 }
+      );
+    }
+
+    console.log('Contact form data saved to Supabase:', data);
 
     return NextResponse.json(
-      { message: 'Contact form submitted successfully' },
+      { message: 'Contact form submitted successfully', data },
       { status: 200 }
     );
   } catch (error) {
@@ -65,69 +82,5 @@ export async function POST(request: NextRequest) {
       { error: 'Internal server error' },
       { status: 500 }
     );
-  }
-}
-
-async function saveToExcel(data: ContactFormData) {
-  const dataDir = path.join(process.cwd(), 'data');
-  const filePath = path.join(dataDir, 'contact-submissions.xlsx');
-
-  try {
-    // Ensure data directory exists
-    await fs.mkdir(dataDir, { recursive: true });
-
-    let workbook: XLSX.WorkBook;
-    let worksheet: XLSX.WorkSheet;
-    let existingData: ContactFormData[] = [];
-
-    // Check if file exists and read existing data
-    try {
-      await fs.access(filePath);
-      const fileBuffer = await fs.readFile(filePath);
-      workbook = XLSX.read(fileBuffer, { type: 'buffer' });
-      
-      if (workbook.SheetNames.length > 0) {
-        worksheet = workbook.Sheets[workbook.SheetNames[0]];
-        existingData = XLSX.utils.sheet_to_json(worksheet) as ContactFormData[];
-      }
-    } catch (error) {
-      // File doesn't exist, will create new one
-      console.log('File does not exist, creating new workbook:', error instanceof Error ? error.message : 'Unknown error');
-      workbook = XLSX.utils.book_new();
-    }
-
-    // Add new data to existing data
-    existingData.push(data);
-
-    // Create new worksheet with all data
-    const newWorksheet = XLSX.utils.json_to_sheet(existingData, {
-      header: ['type', 'name', 'surname', 'email', 'phone', 'submittedAt']
-    });
-
-    // Set column widths for better readability
-    newWorksheet['!cols'] = [
-      { width: 12 }, // type
-      { width: 15 }, // name
-      { width: 15 }, // surname
-      { width: 25 }, // email
-      { width: 15 }, // phone
-      { width: 20 }, // submittedAt
-    ];
-
-    // Add or replace the worksheet
-    if (workbook.SheetNames.includes('Contact Submissions')) {
-      workbook.Sheets['Contact Submissions'] = newWorksheet;
-    } else {
-      XLSX.utils.book_append_sheet(workbook, newWorksheet, 'Contact Submissions');
-    }
-
-    // Write the file
-    const buffer = XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' });
-    await fs.writeFile(filePath, buffer);
-    
-    console.log(`Contact form data saved to ${filePath}`);
-  } catch (error) {
-    console.error('Error saving to Excel:', error);
-    throw new Error(`Failed to save contact form data: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
