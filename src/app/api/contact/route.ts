@@ -39,6 +39,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate phone format (exactly 10 digits)
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      return NextResponse.json(
+        { error: 'Phone number must be exactly 10 digits' },
+        { status: 400 }
+      );
+    }
+
     // Validate type
     if (!['investor', 'position'].includes(type)) {
       return NextResponse.json(
