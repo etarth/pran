@@ -1,26 +1,37 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const Device = () => {
   const deviceCards = [
     {
-      title: "Lorem ipsum",
+      title: "Device explode diagram",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices.",
-      image: "Device Image 1",
+        "This exploded diagram shows the internal components of Pran, a device designed to efficiently deliver therapeutic compounds like NAD+. It uses low-temperature, precision-controlled vaporization to ensure safe and stable inhalation.",
+      image: "/images/deviceExplode.png",
+      alt: "Device explode diagram"
     },
     {
-      title: "Lorem ipsum",
+      title: "ESP32 – Smart Controller",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices.",
-      image: "Device Image 2",
+        "Acts as the brain of the device, managing temperature, usage, and safety. Enables Bluetooth/Wi-Fi for app connectivity and updates.",
+      image: "/images/esp32.png",
+      alt: "ESP32 Smart Controller"
     },
     {
-      title: "Device Title 3",
+      title: "Flat Coil – Heating Element",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices.",
-      image: "Device Image 3",
+        "Delivers precise, even heating to vaporize compounds like NAD+ without burning, ensuring safe and effective delivery.",
+      image: "/images/coil.png",
+      alt: "Flat Coil Heating Element"
+    },
+    {
+      title: "Battery – Power Supply",
+      description:
+        "Rechargeable lithium battery powers the system, designed for long-lasting use and supports fast or wireless charging.",
+      image: "/images/battery.png",
+      alt: "Battery Power Supply"
     },
   ];
 
@@ -40,66 +51,129 @@ const Device = () => {
           >
             <div className="min-w-[900px] h-[420px] bg-gray-100 rounded-md snap-center flex p-2">
               <div className="w-1/2 p-12 flex flex-col justify-center gap-12">
-                <h3 className="text-md font-bold text-black">Lorem ipsum</h3>
+                <h3 className="text-md font-bold text-black">
+                  Device explode diagram
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur. Lorem tellus dui
-                  auctor pharetra aliquam mollis nam fusce. Tortor congue in
-                  tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl
-                  id nisl nunc eros pretium id tortor facilisi ultrices.
+                  This exploded diagram shows the internal components of Pran, a
+                  device designed to efficiently deliver therapeutic compounds
+                  like NAD+. It uses low-temperature, precision-controlled
+                  vaporization to ensure safe and stable inhalation.
                 </p>
               </div>
 
-              <div className="w-1/2 bg-gray-200 rounded-md flex items-center justify-center">
-                <span className="text-gray-400">Device Image</span>
+              <div className="w-1/2 bg-white rounded-md relative">
+                <Image
+                  src="/images/deviceExplode.png"
+                  alt="Pran logo"
+                  fill
+                  className="object-cover rounded-md"
+                />
               </div>
             </div>
 
             <div className="min-w-[900px] h-[420px] bg-gray-100 rounded-md snap-center flex p-2">
               <div className="w-1/2 flex flex-col gap-2">
-                <div className="w-full h-full bg-gray-200 rounded-md"></div>
+                <div className="w-full h-full bg-gray-200 rounded-md relative">
+                  <Image
+                    src="/images/esp32.png"
+                    alt="ESP32 Smart Controller"
+                    fill
+                    className="object-cover rounded-md"
+                  />
+                </div>
                 <div className="flex w-full h-full gap-2">
-                  <div className="w-full h-full bg-gray-200 rounded-md"></div>
-                  <div className="w-full h-full bg-gray-200 rounded-md"></div>
+                  <div className="w-full h-full bg-gray-200 rounded-md relative">
+                    <Image
+                      src="/images/battery.png"
+                      alt="Battery Power Supply"
+                      fill
+                      className="object-cover rounded-md"
+                    />
+                  </div>
+                  <div className="w-full h-full bg-gray-200 rounded-md relative">
+                    <Image
+                      src="/images/coil.png"
+                      alt="Flat Coil Heating Element"
+                      fill
+                      className="object-cover rounded-md"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="w-1/2 p-12 flex flex-col justify-center gap-12 items-center">
-                <h3 className="text-md font-bold text-black">Lorem ipsum</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur. Lorem tellus dui
-                  auctor pharetra aliquam mollis nam fusce. Tortor congue in
-                  tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl
-                  id nisl nunc eros pretium id tortor facilisi ultrices.
-                </p>
+              <div className="w-1/2 p-8 flex flex-col justify-center gap-6">
+                <h3 className="text-lg font-bold text-black text-start mb-2">
+                  Main Components
+                </h3>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-bold text-black mb-1">
+                      ESP32 – Smart Controller
+                    </h4>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      Acts as the brain of the device, managing temperature,
+                      usage, and safety. Enables Bluetooth/Wi-Fi for app
+                      connectivity and updates.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-bold text-black mb-1">
+                      Flat Coil – Heating Element
+                    </h4>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      Delivers precise, even heating to vaporize compounds like
+                      NAD+ without burning, ensuring safe and effective
+                      delivery.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-bold text-black mb-1">
+                      Battery – Power Supply
+                    </h4>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      Rechargeable lithium battery powers the system, designed
+                      for long-lasting use and supports fast or wireless
+                      charging.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="min-w-[900px] h-[420px] bg-gray-100 rounded-md snap-center flex"></div>
           </div>
         </div>
 
-        {/* Mobile Carousel - Consistent Layout */}
+        {/* Mobile Carousel - Updated with 4 Cards */}
         <div className="w-full md:hidden">
           <div className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide gap-4 px-4">
             {deviceCards.map((card, index) => (
               <div
                 key={index}
-                className="flex-none w-80 bg-gray-100 rounded-md snap-center p-2"
+                className="flex-none w-80 bg-gray-100 rounded-md snap-center p-2 flex flex-col"
               >
-                <div className="p-4">
+                <div className="p-4 flex-grow">
                   {/* Header */}
                   <h3 className="text-md font-bold text-black mb-4">
                     {card.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
-                {/* Square Photo */}
-                <div className="w-full aspect-square bg-gray-200 rounded-md flex items-center justify-center">
-                  <span className="text-gray-400">{card.image}</span>
+                {/* Square Photo - Sticks to bottom */}
+                <div className="w-full aspect-square bg-white rounded-md relative mt-auto">
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    fill
+                    className="object-cover rounded-md"
+                  />
                 </div>
               </div>
             ))}
