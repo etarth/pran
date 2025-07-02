@@ -109,7 +109,7 @@ const TeamMember = () => {
                   setSelectedMember(Math.max(0, Math.min(newIndex, teamMembers.length - 1)));
                 }}
               >
-                {teamMembers.map((member, _memberIndex) => (
+                {teamMembers.map((member) => (
                   <div
                     key={member.id}
                     className="flex-none w-full rounded-lg bg-gray-200 flex items-center justify-center snap-center"
