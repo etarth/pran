@@ -40,6 +40,7 @@ export async function GET(request: NextRequest) {
       
     } catch (error) {
       // File doesn't exist
+      console.log('Contact submissions file not found:', error instanceof Error ? error.message : 'Unknown error');
       return NextResponse.json({ 
         submissions: [],
         totalCount: 0 
@@ -79,6 +80,7 @@ export async function POST(request: NextRequest) {
         },
       });
     } catch (error) {
+      console.error('Error reading file for download:', error instanceof Error ? error.message : 'Unknown error');
       return NextResponse.json(
         { error: 'File not found' },
         { status: 404 }

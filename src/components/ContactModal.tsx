@@ -162,11 +162,18 @@ const ContactModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
                 </svg>
               </div>
               <h3 className="text-lg font-medium text-black mb-2">Thank you!</h3>
-              <p className="text-gray-600">Your submission has been received. We'll get back to you soon.</p>
+              <p className="text-gray-600">Your submission has been received. We&apos;ll get back to you soon.</p>
             </div>
           ) : (
             // Form
             <form onSubmit={handleSubmit} className="space-y-6">
+
+              {/* Error Message Display */}
+              {submitStatus === 'error' && errorMessage && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                  {errorMessage}
+                </div>
+              )}
 
               {/* Question */}
               <div>

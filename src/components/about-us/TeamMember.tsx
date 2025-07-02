@@ -109,7 +109,7 @@ const TeamMember = () => {
                   setSelectedMember(Math.max(0, Math.min(newIndex, teamMembers.length - 1)));
                 }}
               >
-                {teamMembers.map((member, index) => (
+                {teamMembers.map((member, memberIndex) => (
                   <div
                     key={member.id}
                     className="flex-none w-full rounded-lg bg-gray-200 flex items-center justify-center snap-center"
@@ -122,12 +122,12 @@ const TeamMember = () => {
 
               {/* Navigation Dots */}
               <div className="flex justify-start space-x-2 mt-4">
-                {teamMembers.map((_, index) => (
+                {teamMembers.map((_, dotIndex) => (
                   <button
-                    key={index}
-                    onClick={() => setSelectedMember(index)}
+                    key={dotIndex}
+                    onClick={() => setSelectedMember(dotIndex)}
                     className={`w-2 h-2 rounded-full transition-colors ${
-                      index === selectedMember ? 'bg-black' : 'bg-gray-300'
+                      dotIndex === selectedMember ? 'bg-black' : 'bg-gray-300'
                     }`}
                   />
                 ))}

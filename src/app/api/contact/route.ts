@@ -92,6 +92,7 @@ async function saveToExcel(data: ContactFormData) {
       }
     } catch (error) {
       // File doesn't exist, will create new one
+      console.log('File does not exist, creating new workbook:', error instanceof Error ? error.message : 'Unknown error');
       workbook = XLSX.utils.book_new();
     }
 
@@ -127,6 +128,6 @@ async function saveToExcel(data: ContactFormData) {
     console.log(`Contact form data saved to ${filePath}`);
   } catch (error) {
     console.error('Error saving to Excel:', error);
-    throw new Error('Failed to save contact form data');
+    throw new Error(`Failed to save contact form data: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
