@@ -11,18 +11,33 @@ const Recruit = () => {
   const positions = [
     {
       id: 1,
-      title: "Open position 1",
-      description: "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices."
+      title: "Respiratory Health Expert",
+      description: "Support us in ensuring the clinical safety and feasibility of inhalable wellness delivery.",
+      jobDescription: [
+        "Advise on pulmonary absorption and respiratory system safety",
+        "Help assess vitamin/formula suitability for inhalation use", 
+        "Contribute to clinical planning and build credibility in medical and partner discussions"
+      ]
     },
     {
       id: 2,
-      title: "Open position 2",
-      description: "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices."
+      title: "Legal & Regulatory Expert",
+      description: "Help us navigate the legal landscape of wellness technology.",
+      jobDescription: [
+        "Provide insights on health regulations, FDA classification, and compliance pathways",
+        "Advise on intellectual property and technology licensing strategies",
+        "Assist with legal agreements and partnerships with clinics and institutions"
+      ]
     },
     {
       id: 3,
-      title: "Open position 3",
-      description: "Lorem ipsum dolor sit amet consectetur. Lorem tellus dui auctor pharetra aliquam mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper convallis at nunc id vitae. Nisl id nisl nunc eros pretium id tortor facilisi ultrices."
+      title: "Finance & Strategy Expert",
+      description: "Build the financial backbone of PRAN and help us scale smart.",
+      jobDescription: [
+        "Develop and maintain financial models, revenue strategy, and forecasts",
+        "Analyze cost structure, pricing, and ROI for clinic partners",
+        "Support fundraising efforts and investor relations"
+      ]
     }
   ];
 
@@ -34,7 +49,9 @@ const Recruit = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-2xl mx-auto px-4 space-y-6">
         {/* Header */}
-        <h2 className="text-black text-md text-center font-bold">Be a part of our journey</h2>
+        <div className="text-center space-y-2">
+          <h2 className="text-black text-md font-bold">Be a part of our journey</h2>
+        </div>
 
         {/* Accordion */}
         <div className="space-y-0">
@@ -65,10 +82,20 @@ const Recruit = () => {
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-4 pb-6">
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                <div className="px-4 pb-6 space-y-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {position.description}
                   </p>
+                  <div>
+                    <h4 className="text-sm font-medium text-black mb-2">Job Description:</h4>
+                    <ul className="space-y-1">
+                      {position.jobDescription.map((item, idx) => (
+                        <li key={idx} className="text-gray-500 text-sm leading-relaxed">
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,7 +106,7 @@ const Recruit = () => {
         <div className="text-center mt-12">
           <button 
             onClick={() => setContactModalOpen(true)}
-            className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors hover:cursor-pointer"
+            className="bg-black text-white px-8 py-2 rounded-md text-sm font-medium hover:bg-[#05ac8a] transition-colors hover:cursor-pointer"
           >
             join us
           </button>

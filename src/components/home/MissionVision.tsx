@@ -8,12 +8,12 @@ const Product = () => {
 
   const slides = [
     {
-      title: "What is Pran?",
+      title: "Mission",
       content: "Pran is a gentle and natural herbal solution designed to support holistic well-being. Our products are rooted in traditional wisdom and modern science to bring calm and clarity.",
       image: "Product Image 1"
     },
     {
-      title: "Why Pran?",
+      title: "Vision",
       content: "Our mission is to deliver pure and thoughtful care through every product. From sourcing to packaging, Pran ensures quality, sustainability, and authenticity in every step.",
       image: "Product Image 2"
     }
@@ -81,17 +81,15 @@ const Product = () => {
           {/* Left Column */}
           <div className="flex-1 space-y-16">
             <div>
-              <h6 className="text-md text-black font-bold mb-6">What is Pran?</h6>
+              <h6 className="text-md text-black font-bold mb-6">{slides[0].title}</h6>
               <p className="text-gray-600">
-                Pran is a gentle and natural herbal solution designed to support holistic well-being.
-                Our products are rooted in traditional wisdom and modern science to bring calm and clarity.
+               {slides[0].content}
               </p>
             </div>
             <div>
-              <h2 className="text-md text-black font-bold mb-6">Why Pran?</h2>
+              <h2 className="text-md text-black font-bold mb-6">{slides[1].title}</h2>
               <p className="text-gray-600">
-                Our mission is to deliver pure and thoughtful care through every product. From sourcing to packaging,
-                Pran ensures quality, sustainability, and authenticity in every step.
+                {slides[1].content}
               </p>
             </div>
             <Link href={"/product"} className='bg-black text-white text-sm px-6 py-2 rounded-md hover:opacity-90 w-fit'>

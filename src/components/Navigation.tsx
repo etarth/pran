@@ -29,7 +29,7 @@ const Navigation = ({
         <div className="flex gap-4 items-center">
           <Link
             href="/"
-            className="text-black text-xl font-bold transition-colors cursor-pointer"
+            className="text-black text-xl font-bold transition-colors cursor-pointer "
           >
             Pran
           </Link>
@@ -62,7 +62,7 @@ const Navigation = ({
           </Link>
           <button
             onClick={() => setContactModalOpen(true)}
-            className="bg-black text-white text-sm px-6 py-1.5 rounded-md hover:opacity-90 transition-opacity"
+            className="bg-black text-white text-sm px-6 py-1.5 rounded-md hover:opacity-90 transition-opacity hover:bg-[#05ac8a]"
           >
             Join Us
           </button>
@@ -161,7 +161,7 @@ const Navigation = ({
                   {/* Join Us Button */}
                   <button
                     onClick={handleContactClick}
-                    className="bg-black text-white text-md px-8 py-2 rounded-lg hover:opacity-90 transition-opacity font-medium"
+                    className="bg-black text-white text-md px-8 py-2 rounded-lg hover:opacity-90 hover:bg-[#05ac8a] transition-opacity font-medium"
                   >
                     Join Us
                   </button>

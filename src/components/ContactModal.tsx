@@ -283,7 +283,7 @@ const ContactModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
               <button
                 type="submit"
                 disabled={!selectedOption || !formData.name || !formData.email || isSubmitting}
-                className="w-full bg-black text-white font-medium h-12 rounded-lg mt-6 disabled:text-black disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                className="w-full bg-black text-white font-medium h-12 rounded-lg mt-6 hover:bg-[#05ac8a] disabled:text-black disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
                 onClick={() => console.log('Submit button clicked')} // Debug log
               >
                 {isSubmitting ? (
