@@ -8,28 +8,28 @@ const Device = () => {
     {
       title: "Device explode diagram",
       description:
-        "This exploded diagram shows the internal components of Pran, a device designed to efficiently deliver therapeutic compounds like NAD+. It uses low-temperature, precision-controlled vaporization to ensure safe and stable inhalation.",
+        "This exploded diagram shows the internal components of Pran, a device designed to efficiently deliver therapeutic compounds like NAD+ using advanced electrospray technology for precise atomization.",
       image: "/images/deviceExplode.png",
       alt: "Device explode diagram"
     },
     {
       title: "ESP32 – Smart Controller",
       description:
-        "Acts as the brain of the device, managing temperature, usage, and safety. Enables Bluetooth/Wi-Fi for app connectivity and updates.",
+        "Acts as the brain of the device, managing voltage, spray patterns, and safety. Enables Bluetooth/Wi-Fi for app connectivity and electrospray parameter updates.",
       image: "/images/esp32.png",
       alt: "ESP32 Smart Controller"
     },
     {
-      title: "Flat Coil – Heating Element",
+      title: "Electrospray Nozzle – Atomization System",
       description:
-        "Delivers precise, even heating to vaporize compounds like NAD+ without burning, ensuring safe and effective delivery.",
-      image: "/images/coil.png",
-      alt: "Flat Coil Heating Element"
+        "Uses high voltage to create fine droplets through electrospray ionization, ensuring optimal particle size for effective compound delivery without thermal degradation.",
+      image: "/images/electrospray.png",
+      alt: "Electrospray Nozzle Atomization System"
     },
     {
       title: "Battery – Power Supply",
       description:
-        "Rechargeable lithium battery powers the system, designed for long-lasting use and supports fast or wireless charging.",
+        "High-voltage capable battery powers the electrospray system, designed for consistent performance and supports fast charging for reliable operation.",
       image: "/images/battery.png",
       alt: "Battery Power Supply"
     },
@@ -57,15 +57,15 @@ const Device = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   This exploded diagram shows the internal components of Pran, a
                   device designed to efficiently deliver therapeutic compounds
-                  like NAD+. It uses low-temperature, precision-controlled
-                  vaporization to ensure safe and stable inhalation.
+                  like NAD+ using advanced electrospray technology for precise
+                  atomization and optimal bioavailability.
                 </p>
               </div>
 
               <div className="w-1/2 bg-white rounded-md relative">
                 <Image
                   src="/images/deviceExplode.png"
-                  alt="Pran logo"
+                  alt="Pran electrospray device"
                   fill
                   className="object-cover rounded-md"
                 />
@@ -93,8 +93,8 @@ const Device = () => {
                   </div>
                   <div className="w-full h-full bg-gray-200 rounded-md relative">
                     <Image
-                      src="/images/coil.png"
-                      alt="Flat Coil Heating Element"
+                      src="/images/electrospray.png"
+                      alt="Electrospray Nozzle System"
                       fill
                       className="object-cover rounded-md"
                     />
@@ -113,20 +113,20 @@ const Device = () => {
                       ESP32 – Smart Controller
                     </h4>
                     <p className="text-gray-600 text-xs leading-relaxed">
-                      Acts as the brain of the device, managing temperature,
-                      usage, and safety. Enables Bluetooth/Wi-Fi for app
-                      connectivity and updates.
+                      Acts as the brain of the device, managing voltage levels,
+                      spray patterns, and safety protocols. Enables Bluetooth/Wi-Fi 
+                      for app connectivity and electrospray parameter updates.
                     </p>
                   </div>
 
                   <div>
                     <h4 className="text-sm font-bold text-black mb-1">
-                      Flat Coil – Heating Element
+                      Electrospray Nozzle – Atomization System
                     </h4>
                     <p className="text-gray-600 text-xs leading-relaxed">
-                      Delivers precise, even heating to vaporize compounds like
-                      NAD+ without burning, ensuring safe and effective
-                      delivery.
+                      Uses high voltage to create fine droplets through electrospray
+                      ionization, ensuring optimal particle size for effective 
+                      compound delivery without thermal degradation.
                     </p>
                   </div>
 
@@ -135,9 +135,9 @@ const Device = () => {
                       Battery – Power Supply
                     </h4>
                     <p className="text-gray-600 text-xs leading-relaxed">
-                      Rechargeable lithium battery powers the system, designed
-                      for long-lasting use and supports fast or wireless
-                      charging.
+                      High-voltage capable battery powers the electrospray system,
+                      designed for consistent performance and supports fast 
+                      charging for reliable operation.
                     </p>
                   </div>
                 </div>

@@ -7,13 +7,13 @@ const Cartridge = () => {
   const cartridgeCards = [
     {
       title: "Cartridge",
-      description: "The cartridge holds the liquid formulation (e.g., NAD+ or other treatments). It's designed for easy replacement, leak prevention, and optimal flow to the heating coil, ensuring smooth and efficient vapor delivery.",
+      description: "The cartridge holds the liquid formulation (e.g., NAD+ or other treatments). It's designed for easy replacement, leak prevention, and optimal flow to the electrospray nozzle, ensuring smooth and efficient atomization delivery.",
       image: "/images/cartridge.png",
       alt: "Cartridge"
     },
     {
       title: "Cartridge explode diagram",
-      description: "The exploded diagram highlights three essential components: the mouthpiece for vapor intake, the cartridge reservoir for holding the therapeutic liquid, and the pressure sensor that detects inhalation to activate vaporization.",
+      description: "The exploded diagram highlights three essential components: the mouthpiece for aerosol intake, the cartridge reservoir for holding the therapeutic liquid, and the electrospray system that creates fine droplets through ionization for optimal delivery.",
       image: "/images/cartridgeExplode.png",
       alt: "Cartridge explode diagram"
     }

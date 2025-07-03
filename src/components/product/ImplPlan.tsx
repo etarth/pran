@@ -21,21 +21,15 @@ const ImplPlan = () => {
     },
     {
       id: 3,
-      year: "2026",
+      year: "2026-2027",
       phase: "Preclinical Studies",
       description: "Conduct preclinical trials to establish safety and efficacy data before human testing.",
     },
     {
       id: 4,
-      year: "2026-2027",
+      year: "2027-2029",
       phase: "Phase I Clinical Trial",
       description: "First human testing phase to evaluate safety, dosage, and side effects in small groups.",
-    },
-    {
-      id: 5,
-      year: "2027-2029",
-      phase: "Phase II & III Clinical Trials",
-      description: "Large-scale clinical trials to confirm effectiveness and monitor adverse reactions before market approval.",
     }
   ];
 

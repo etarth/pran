@@ -8,11 +8,21 @@ const Hero = () => {
     <section className="bg-background h-screen">
       <div className="flex flex-col gap-12 px-6 w-full h-full text-center">
         <div className="relative bg-gray-200 w-full h-[600px] rounded-lg overflow-hidden">
+          {/* Desktop Image */}
           <Image
-            src="/images/hero.jpg"
-            alt="Pran logo"
+            src="/images/hero.png"
+            alt="Pran hero"
             fill
             style={{ objectFit: "cover" }}
+            className="hidden md:block"
+          />
+          {/* Mobile Image */}
+          <Image
+            src="/images/heroMobile.png"
+            alt="Pran hero mobile"
+            fill
+            style={{ objectFit: "cover" }}
+            className="block md:hidden"
           />
         </div>
         <div className="flex flex-col gap-6">

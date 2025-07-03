@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 const Product = () => {
@@ -10,12 +11,12 @@ const Product = () => {
     {
       title: "Mission",
       content: "Pran is a gentle and natural herbal solution designed to support holistic well-being. Our products are rooted in traditional wisdom and modern science to bring calm and clarity.",
-      image: "Product Image 1"
+      image: "/images/ivDrip1.png"
     },
     {
       title: "Vision",
       content: "Our mission is to deliver pure and thoughtful care through every product. From sourcing to packaging, Pran ensures quality, sustainability, and authenticity in every step.",
-      image: "Product Image 2"
+      image: "/images/ivDrip2.png"
     }
   ];
 
@@ -48,9 +49,14 @@ const Product = () => {
                 {slides.map((slide, index) => (
                   <div
                     key={index}
-                    className="flex-none w-full aspect-square rounded-lg bg-gray-200 flex items-center justify-center snap-center"
+                    className="flex-none w-full aspect-square rounded-lg bg-gray-200 overflow-hidden snap-center relative"
                   >
-                    <span className="text-gray-500">{slide.image}</span>
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -99,8 +105,13 @@ const Product = () => {
 
           {/* Right Column */}
           <div className="flex-1">
-            <div className="w-full h-[400px] rounded-lg bg-gray-200 flex items-center justify-center">
-              <span className="text-gray-500">Product Image</span>
+            <div className="w-full h-[400px] rounded-lg bg-gray-200 overflow-hidden relative">
+              <Image
+                src="/images/ivDrip1.png"
+                alt="Product"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
