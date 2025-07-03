@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Linkedin, Mail, Phone, Check, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
 
 const TeamMember = () => {
@@ -14,8 +15,8 @@ const TeamMember = () => {
       position: "CEO",
       fullName: "Worathas W.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur",
-      image: "/api/placeholder/300/400",
+        "A Nano Engineering student with a strong passion for startups and nanotechnology. Having interned in research labs, Thames brings deep technical expertise and visionary leadership to drive our innovation forward.",
+      image: "/images/team/thames.png",
       contact: {
         linkedin: "https://www.linkedin.com/in/thames-wongsatidporn-271500228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         email: "thamesworathas@gmail.com",
@@ -24,26 +25,12 @@ const TeamMember = () => {
     },
     {
       id: 2,
-      nickname: "Earth",
-      position: "CTO",
-      fullName: "Ratchaphon S.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur",
-      image: "/api/placeholder/300/400",
-      contact: {
-        linkedin: "#",
-        email: "earth5556789@gmail.com",
-        phone: "0970976927"
-      },
-    },
-    {
-      id: 3,
       nickname: "Music",
       position: "CFO",
       fullName: "Pataraton H.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur",
-      image: "/api/placeholder/300/400",
+        "A Business student and founder of his own clothing brand, Music excels in finance and entrepreneurship. His strategic mindset and financial acumen are key to managing and scaling our company’s growth.",
+      image: "/images/team/music.png",
       contact: {
         linkedin: "https://www.linkedin.com/in/pataraton-hansuksakul-32bb2530a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         email: "pataratonh@gmail.com",
@@ -51,13 +38,27 @@ const TeamMember = () => {
       },
     },
     {
+      id: 3,
+      nickname: "Earth",
+      position: "",
+      fullName: "Ratchaphon S.",
+      description:
+        "A Computer Engineering student passionate about technology and software development. Earth leads our technical innovation, ensuring that our products are built with cutting-edge, reliable solutions.",
+      image: "/images/team/earth.png",
+      contact: {
+        linkedin: "https://www.linkedin.com/in/ratchaphon-suwangerd/",
+        email: "earth5556789@gmail.com",
+        phone: "0970976927"
+      },
+    },
+    {
       id: 4,
       nickname: "Amy",
-      position: "COO",
+      position: "",
       fullName: "Jantemduang K.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur",
-      image: "/api/placeholder/300/400",
+        "A Communication student with a natural talent for marketing and social engagement. Amy excels at building relationships and crafting compelling narratives that connect our brand with people in meaningful ways.",
+      image: "/images/team/amy.png",
       contact: {
         linkedin: "#",
         email: "jantmeduang.amy@gmail.com",
@@ -67,11 +68,11 @@ const TeamMember = () => {
     {
       id: 5,
       nickname: "Haris",
-      position: "CIO",
+      position: "",
       fullName: "Haris J.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur",
-      image: "/api/placeholder/300/400",
+        "An Education student with outstanding presentation and communication skills. Haris knows how to use words effectively, bringing strong pitching abilities and impactful storytelling to our team.",
+      image: "/images/team/haris.png",
       contact: {
         linkedin: "#",
         email: "harisjiman@gmail.com",
@@ -197,10 +198,15 @@ const TeamMember = () => {
                 {teamMembers.map((member) => (
                   <div
                     key={member.id}
-                    className="flex-none w-full rounded-lg bg-gray-200 flex items-center justify-center snap-center"
+                    className="flex-none w-full rounded-lg bg-gray-200 overflow-hidden snap-center relative"
                     style={{ aspectRatio: '9/13' }}
                   >
-                    <span className="text-gray-500">{member.nickname}</span>
+                    <Image
+                      src={member.image}
+                      alt={member.nickname}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -254,8 +260,13 @@ const TeamMember = () => {
         {/* Desktop Version */}
         <div className="hidden md:flex flex-col gap-12">
           <div className="flex justify-between items-center">
-            <div className="bg-gray-200 rounded-lg h-[420px] w-64 flex items-center justify-center">
-              <span className="text-gray-400">{mainMember.nickname} Image</span>
+            <div className="bg-gray-200 rounded-lg h-[420px] w-64 overflow-hidden relative">
+              <Image
+                src={mainMember.image}
+                alt={mainMember.nickname}
+                fill
+                className="object-cover"
+              />
             </div>
             
             <div className="flex gap-6">
@@ -265,11 +276,14 @@ const TeamMember = () => {
                   <button
                     key={member.id}
                     onClick={() => setSelectedMember(memberIndex)}
-                    className="bg-gray-200 rounded-lg h-80 w-52 flex items-center justify-center transition-all hover:bg-gray-300 hover:scale-105"
+                    className="bg-gray-200 rounded-lg h-80 w-52 overflow-hidden relative transition-all hover:scale-105"
                   >
-                    <span className="text-gray-400 text-sm">
-                      {member.nickname}
-                    </span>
+                    <Image
+                      src={member.image}
+                      alt={member.nickname}
+                      fill
+                      className="object-cover transition-all"
+                    />
                   </button>
                 );
               })}
