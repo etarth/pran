@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Linkedin, Mail, Phone, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Linkedin, Mail, Phone, Check, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
 
 const TeamMember = () => {
   const [selectedMember, setSelectedMember] = useState(0);
@@ -125,7 +125,7 @@ const TeamMember = () => {
   const ClipboardButton = ({ text, id, icon: Icon, label }: {
     text: string;
     id: string;
-    icon: any;
+    icon: LucideIcon;
     label: string;
   }) => {
     const isCopied = copiedStates[id];
@@ -133,14 +133,11 @@ const TeamMember = () => {
     return (
       <button
         onClick={() => copyToClipboard(text, id)}
-        className={`
-          w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 
-          transform active:scale-95 relative group border
-          ${isCopied 
+        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 transform active:scale-95 relative group border ${
+          isCopied 
             ? 'bg-gray-800 text-white border-gray-800' 
             : 'bg-transparent text-gray-600 border-gray-300 hover:bg-gray-50'
-          }
-        `}
+        }`}
         title={isCopied ? 'Copied!' : `Copy ${label}`}
       >
         {isCopied ? (
@@ -162,14 +159,11 @@ const TeamMember = () => {
     return (
       <button
         onClick={() => handleLinkedInClick(url)}
-        className={`
-          w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 
-          transform active:scale-95 relative group border
-          ${isActive 
+        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 transform active:scale-95 relative group border ${
+          isActive 
             ? 'bg-transparent text-gray-600 border-gray-300 hover:bg-gray-50' 
             : 'bg-transparent text-gray-400 border-gray-200 cursor-not-allowed'
-          }
-        `}
+        }`}
         disabled={!isActive}
         title={isActive ? "LinkedIn Profile" : "LinkedIn not available"}
       >
