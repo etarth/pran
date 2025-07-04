@@ -180,7 +180,7 @@ const TeamMember = () => {
   return (
     <section className="py-16 md:py-20 bg-white min-h-screen md:min-h-0">
       <div className="flex flex-col gap-12 max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-black text-md font-bold text-center">Team Member</h2>
+        <h2 className="text-black text-md font-bold text-center">Our Founder</h2>
 
         {/* Mobile Version */}
         <div className="flex-1 w-full md:hidden flex flex-col justify-center min-h-[calc(100vh-12rem)]">
@@ -199,7 +199,7 @@ const TeamMember = () => {
                   <div
                     key={member.id}
                     className="flex-none w-full rounded-lg bg-gray-200 overflow-hidden snap-center relative"
-                    style={{ aspectRatio: '9/13' }}
+                    style={{ aspectRatio: '2/3' }}
                   >
                     <Image
                       src={member.image}
