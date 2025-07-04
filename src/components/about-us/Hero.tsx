@@ -11,7 +11,7 @@ const Hero = () => {
           <h2 className="text-black text-md font-bold">Team</h2>
 
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-2 md:px-0">
-            <span className="font-bold text-black">Pran</span> At PRAN, we’re
+            At <span className="font-bold text-black">Pran</span>, we’re
             building a new way to recharge — delivering essential nutrients
             through your breath, not a needle. We combine science, convenience,
             and comfort to bring wellness into your daily routine — anytime,
