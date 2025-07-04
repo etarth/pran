@@ -27,11 +27,7 @@ const Hero = () => {
         </div>
         <div className="flex flex-col gap-6">
           <p className="text-gray-500 max-w-2xl mx-auto">
-            <span className="font-bold text-black">Pran</span> Lorem ipsum dolor
-            sit amet consectetur. Lorem tellus dui auctor pharetra aliquam
-            mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper
-            convallis at nunc id vitae. Nisi id nisl nunc eros pretium id tortor
-            facilisi ultrices.
+            <span className="font-bold text-black">Pran</span> Inhaled Treatment Platform
           </p>
           <Image
             src="/images/pran.png"

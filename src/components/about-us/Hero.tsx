@@ -11,11 +11,11 @@ const Hero = () => {
           <h2 className="text-black text-md font-bold">Team</h2>
 
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-2 md:px-0">
-            <span className="font-bold text-black">Pran</span> Lorem ipsum dolor
-            sit amet consectetur. Lorem tellus dui auctor pharetra aliquam
-            mollis nam fusce. Tortor congue in tempor etiam ac. Ullamcorper
-            convallis at nunc id vitae. Nisi id nisl nunc eros pretium id tortor
-            facilisi ultrices.
+            <span className="font-bold text-black">Pran</span> At PRAN, we’re
+            building a new way to recharge — delivering essential nutrients
+            through your breath, not a needle. We combine science, convenience,
+            and comfort to bring wellness into your daily routine — anytime,
+            anywhere.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ const Hero = () => {
             width={800}
             height={600}
             className="w-full h-auto rounded-md object-cover"
-            style={{ maxHeight: '50vh' }}
+            style={{ maxHeight: "50vh" }}
           />
         </div>
 

@@ -10,12 +10,12 @@ const Product = () => {
   const slides = [
     {
       title: "Mission",
-      content: "Pran is a gentle and natural herbal solution designed to support holistic well-being. Our products are rooted in traditional wisdom and modern science to bring calm and clarity.",
+      content: "We are building a science-backed, needle-free health platform that delivers key vitamins via the lungs. Our goal is to empower people to take care of their health easily, safely, and on their own terms.",
       image: "/images/ivDrip1.png"
     },
     {
       title: "Vision",
-      content: "Our mission is to deliver pure and thoughtful care through every product. From sourcing to packaging, Pran ensures quality, sustainability, and authenticity in every step.",
+      content: "To make wellness more accessible and comfortable by transforming how people receive essential nutrients—through inhalation instead of injection.",
       image: "/images/ivDrip2.png"
     }
   ];
